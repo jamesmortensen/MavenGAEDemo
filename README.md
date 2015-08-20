@@ -56,6 +56,11 @@ Exception in thread "main" java.lang.UnsupportedClassVersionError: org/apache/ma
 	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:356)
 ```
 
+Insert this inside of ~/.bash_profile:
+```
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_75.jdk/Contents/Home
+```
+
 This means you need to add the junit dependency to the dependencies element of the pom.xml
 ```
 package junit.framework does not exist
