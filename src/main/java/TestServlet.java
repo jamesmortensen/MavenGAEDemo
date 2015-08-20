@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.setmore.myapp.foo.*;
+
 public class TestServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -15,6 +17,9 @@ public class TestServlet extends HttpServlet {
 		DateFetcher dateFetcher = new DateFetcher();
 		long dateAsLong = 0;
 		dateAsLong = dateFetcher.getDateAsLong();
+
+		Bar bar = new Bar();
+		System.out.println(bar.getBar());
 
 		resp.setContentType("text/plain");
 		resp.getWriter().write("Today's Date is " + dateAsLong );
