@@ -76,3 +76,30 @@ add this:
 ```
 
 We also include objectify, since this demo will require it.
+
+
+#Jenkins 
+
+Part of this demo involves setting up a continuous integration server on Mac OS locally.  A real setup would be on a Google Compute instance, but for the demo we work locally.
+
+By default, Jenkins will run on localhost:8080, which just happens to conflict with App Engine's dev server running on port 8080. So we change the Jenkins port by changing the default at the command line:
+
+```
+sudo defaults write /Library/Preferences/org.jenkins-ci httpPort 9090
+```
+
+Note that stopping Jenkins is as follows: 
+
+```
+$ sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist
+```
+
+And starting is done with this command:
+```
+$ sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist
+```
+
+Now you can go to http://localhost:9090 so there are no port conflicts with App Engine.
+
+Note that the above commands run Jenkins as a daemon.
+
