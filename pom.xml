@@ -67,8 +67,9 @@
     <build>
         <!-- for hot reload of the web application-->
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+        <!-- <outputDirectory>target/${project.artifactId}-${project.version}/WEB-INF/classes</outputDirectory> -->
         <plugins>
-            <plugin>
+            <!-- <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>2.1</version>
@@ -81,7 +82,7 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin> -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <version>3.1</version>
@@ -120,9 +121,10 @@
                     <port>8080</port -->
                     <!-- Comment in the below snippet to enable local debugging with a remote debugger
                          like those included with Eclipse or IntelliJ -->
-                    <!-- jvmFlags>
+                    <jvmFlags>
                       <jvmFlag>-agentlib:jdwp=transport=dt_socket,address=8000,server=y,suspend=n</jvmFlag>
-                    </jvmFlags -->
+                    </jvmFlags>
+                    <fullScanSeconds>6</fullScanSeconds>
                 </configuration>
             </plugin>
             <plugin>
@@ -132,6 +134,17 @@
               <configuration>
                 <set_default>true</set_default>
               </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.3.1-SNAPSHOT</version>
+                <configuration>
+                    <contextPath>/</contextPath>
+                    <stopKey>foo</stopKey>
+                    <stopPort>9999</stopPort>
+                    <scanIntervalSeconds>7</scanIntervalSeconds>
+                </configuration>
             </plugin>
         </plugins>
     </build>

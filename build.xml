@@ -1,0 +1,27 @@
+<project>
+	<property name="src" value="src/**.java"/>
+    <property name="webinf" value="target/myapp-1.0-SNAPSHOT/WEB-INF"/>
+	<property name="testclasses" value="target"/>
+    <!-- <property name="lib" value="jung2-2_0_1"/> -->
+	
+	
+	
+	<target name="eclipse-test-runner">
+		
+		<java classname="DateFetcherTest">
+			<classpath>
+		      <pathelement path="${classpath}"/>
+		      <fileset dir="target/myapp-1.0-SNAPSHOT/WEB-INF/lib">
+		        <include name="**/*.jar"/>
+		      </fileset>
+		      <pathelement location="target/test-classes"/>
+			  <pathelement location="target/myapp-1.0-SNAPSHOT/WEB-INF/classes"/>
+		      <dirset dir="target/test-classes">
+		        <include name="**.class"/>
+		        <!-- <exclude name="**/*Test*"/> -->
+		      </dirset>
+		      <!-- <filelist refid="third-party_jars"/> -->
+		    </classpath>
+		</java>
+	</target>
+</project>

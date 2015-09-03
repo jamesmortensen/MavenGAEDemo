@@ -19,10 +19,10 @@ public class TestServlet extends HttpServlet {
 		dateAsLong = dateFetcher.getDateAsLong();
 
 		Bar bar = new Bar();
-		System.out.println(bar.getBar());
+		System.out.println(bar.getBar() + "jm was here wtf asdsafdsasafdsfds HELLO");
 
 		resp.setContentType("text/plain");
-		resp.getWriter().write("Today's Date is " + dateAsLong );
+		resp.getWriter().write("Today's Date is james was here" + dateAsLong );
 		
 	}
 
