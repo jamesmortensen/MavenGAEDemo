@@ -21,11 +21,6 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
-			<name>org.eclipse.m2e.core.maven2Builder</name>
-			<arguments>
-			</arguments>
-		</buildCommand>
-		<buildCommand>
 			<name>org.eclipse.pde.ManifestBuilder</name>
 			<arguments>
 			</arguments>
@@ -43,6 +38,11 @@
 					<key>LaunchConfigHandle</key>
 					<value>&lt;project&gt;/.externalToolBuilders/ant_junit_auto.launch</value>
 				</dictionary>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>

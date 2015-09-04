@@ -22,7 +22,7 @@ public class TestServlet extends HttpServlet {
 		System.out.println(bar.getBar() + "jm was here wtf asdsafdsasafdsfds HELLO");
 
 		resp.setContentType("text/plain");
-		resp.getWriter().write("Today's Date is james was here" + dateAsLong );
+		resp.getWriter().write("Today's Date is " + dateAsLong );
 		
 	}
 
